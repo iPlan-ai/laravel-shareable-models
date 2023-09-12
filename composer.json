@@ -1,12 +1,12 @@
 {
-    "name": "sassnowski/laravel-shareable-models",
+    "name": "iplan-ai/laravel-shareable-models",
     "description": "Create shareable links from your eloquent models.",
     "license": "MIT",
     "type": "library",
     "authors": [
         {
-            "name": "Kai Sassnowski",
-            "email": "me@kai-sassnowki.com"
+            "name": "Salman",
+            "email": "salman@iplan.ai"
         }
     ],
     "require": {

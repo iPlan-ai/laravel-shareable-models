@@ -22,6 +22,7 @@ class ShareableLink extends Model
     protected $casts = [
         'should_notify' => 'bool',
         'active' => 'bool',
+        'meta' => 'array'
     ];
 
     public static function buildFor(ShareableInterface $entity): ShareableLinkBuilder
