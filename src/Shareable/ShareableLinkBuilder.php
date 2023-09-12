@@ -29,11 +29,23 @@ class ShareableLinkBuilder
     /** @var string */
     private $baseUrl;
 
+    /** @var array */
+    private array $meta;
+
+
     public function __construct(ShareableInterface $entity)
     {
         $this->entity = $entity;
         $this->baseUrl = config('shareable-model.base_url');
     }
+
+    public function setMeta(array $meta): self
+    {
+        $this->meta = $meta;
+
+        return $this;
+    }
+
 
     public function setPrefix(string $prefix): self
     {
@@ -83,7 +95,8 @@ class ShareableLinkBuilder
             'expires_at' => $this->expirationDate,
             'uuid' => $uuid,
             'url' => $this->buildUrl($uuid),
-            'should_notify' => $this->shouldNotify
+            'should_notify' => $this->shouldNotify,
+            'meta' => $this->meta
         ]);
 
         return $this->entity->links()->save($link);
